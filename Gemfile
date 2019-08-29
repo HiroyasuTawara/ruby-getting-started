@@ -36,4 +36,5 @@ gem 'puma'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+# To use Linebot
+gem 'line-bot-api'
