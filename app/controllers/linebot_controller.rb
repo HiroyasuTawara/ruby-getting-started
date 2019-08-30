@@ -16,9 +16,22 @@ def janken(hand)
     if hand =~ /グ/
        message = {
                   type: "text",
-                  text: "ぱーおれの勝ち!"
+                  text: "パー！おれの勝ち!"
                 }
         return message
+    elsif hand =~/パ/
+        message = {
+            type: "text",
+            text: "チョキ！おれの勝ち！"
+        }
+        return message
+    elsif hand =~/チョキ/
+        message = {
+            type: "text",
+            text: "グー！！おれの勝ち！"
+        }
+        return message
+    
     else
         message = {
                   type: "text",
