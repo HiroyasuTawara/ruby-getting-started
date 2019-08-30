@@ -12,7 +12,7 @@ require "line/bot"  # gem "line-bot-api"
     
 
 def janken(hand)
-    bot_hand = ["グー", "チョキ","パー"].shuffle.first
+    bot_hand = ["グー","チョキ","パー"].shuffle.first
     
     if(hand == "グー！")
     if bot_hand =="パー"
@@ -21,10 +21,10 @@ def janken(hand)
                   text: ["パー！おれの勝ち!","パー！何で負けたか考えといて下さい","パー！残念！次はがんばりましょう"].shuffle.first
                 }
         return message
-    elsif bot_hand ==~/グ/
+    elsif bot_hand == "グー"
         message = {
             type: "text",
-            text: ["グー！あいこはおれの勝ち！","グー！あいこはきみの負け！"].suffle.first
+            text: ["グー！あいこはおれの勝ち！","グー！あいこはきみの負け！"].shuffle.first
         }
         return message
     elsif bot_hand =="チョキ"
@@ -35,7 +35,7 @@ def janken(hand)
         return message
     end
     
-    if(hand == "パー！")
+    elsif(hand == "パー！")
     if bot_hand =="チョキ"
        message = {
                   type: "text",
@@ -45,7 +45,7 @@ def janken(hand)
     elsif bot_hand =="パー"
         message = {
             type: "text",
-            text: ["パー！あいこはおれの勝ち！","パー！あいこはきみの負け！"].suffle.first
+            text: ["パー！あいこはおれの勝ち！","パー！あいこはきみの負け！"].shuffle.first
         }
         return message
     elsif bot_hand =="グー"
@@ -54,7 +54,6 @@ def janken(hand)
             text: ["グー！やるやん！","グー！明日はおれにリベンジさせて"].shuffle.first
         }
         return message
-    end
     end
     end
 end
