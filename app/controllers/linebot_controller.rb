@@ -21,7 +21,7 @@ def janken(hand)
                   text: ["パー！おれの勝ち!","パー！何で負けたか考えといて下さい","パー！残念！次はがんばりましょう"].shuffle.first
                 }
         return message
-    elsif bot_hand =="グー"
+    elsif bot_hand ==~/グ/
         message = {
             type: "text",
             text: ["グー！あいこはおれの勝ち！","グー！あいこはきみの負け！"].suffle.first
@@ -35,6 +35,27 @@ def janken(hand)
         return message
     end
     
+    if(hand == "パー！")
+    if bot_hand =="チョキ"
+       message = {
+                  type: "text",
+                  text: ["チョキ！おれの勝ち!","チョキ！何で負けたか考えといて下さい","チョキ！残念！次はがんばりましょう"].shuffle.first
+                }
+        return message
+    elsif bot_hand =="パー"
+        message = {
+            type: "text",
+            text: ["パー！あいこはおれの勝ち！","パー！あいこはきみの負け！"].suffle.first
+        }
+        return message
+    elsif bot_hand =="グー"
+        message = {
+            type: "text",
+            text: ["グー！やるやん！","グー！明日はおれにリベンジさせて"].shuffle.first
+        }
+        return message
+    end
+    end
     end
 end
   
