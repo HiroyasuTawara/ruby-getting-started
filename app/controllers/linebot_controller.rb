@@ -13,19 +13,12 @@ require "line/bot"  # gem "line-bot-api"
     if event.message['text'] == "じゃんけん"
         message = [
             {
-             puts "じゃんけん・・・・"
 
 def janken
-puts "[0]グー\n[1]チョキ\n[2]パー"
 
 player=gets.to_i
 program=rand(3)
-
-<<<<<<< HEAD
-jankens = ["グー!","チョキ!","パー!"]
-=======
-jankens = ["グー","チョキ","パー"]
->>>>>>> 96fb635662dde9fb5ce16ee521219a98c8ba23f9
+jankens = ["グー！","チョキ！","パー！"]
 puts "あなたの手:#{jankens[player]},相手の手:#{jankens[program]}"
 
 if player == program
@@ -45,13 +38,8 @@ end
 nextgame = true
 while nextgame 
   nextgame = janken
-<<<<<<< HEAD
-end   
-            }
-            ]
-=======
-end
->>>>>>> 96fb635662dde9fb5ce16ee521219a98c8ba23f9
+  end
+  
     
     def callback
       body = request.body.read
