@@ -24,7 +24,7 @@ def janken(hand)
     elsif bot_hand =="グー"
         message = {
             type: "text",
-            text: ["あいこはおれの勝ち！！"]
+            text: ["グー！あいこはおれの勝ち！","グー！あいこはきみの負け！"]suffle.first
         }
         return message
     elsif bot_hand =="チョキ"
