@@ -79,6 +79,17 @@ def janken(hand)
     end
 end
   
+ if event.message['text']=~/おみくじ/
+     message = [
+         {
+             type:"text"
+             text:["大吉","中吉","小吉","凶","大凶"].shuffle.first+"！おみくじは一日一回！"
+         }
+         ]
+         client.reply_message(event["replyToken"],message)
+ end
+ 
+    
     
     def callback
       body = request.body.read
