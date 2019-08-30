@@ -15,7 +15,7 @@ def janken(hand)
     bot_hand = ["グー", "チョキ","パー"].shuffle.first
     
     if(hand == "グー！")
-    elsif bot_hand =="パー"
+    if bot_hand =="パー"
        message = {
                   type: "text",
                   text: ["パー！おれの勝ち!","パー！何で負けたか考えといて下さい","パー！残念！次はがんばりましょう"].shuffle.first
