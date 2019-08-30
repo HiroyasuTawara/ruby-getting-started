@@ -33,14 +33,8 @@ def janken(hand)
             text: ["チョキ！やるやん！","チョキ！明日はおれにリベンジさせて"].shuffle.first
         }
         return message
-    
-    else
-        message = {
-                  type: "text",
-                  text: "君の負け!"
-                }
-        return message
     end
+    
     end
 end
   
