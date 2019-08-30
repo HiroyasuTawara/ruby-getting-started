@@ -13,7 +13,7 @@ require "line/bot"  # gem "line-bot-api"
 
 def janken(hand)
     
-    if hand == "グー!"
+    if hand =~ /グ/
        message = {
                   type: "text",
                   text: "ぱーおれの勝ち!"
@@ -26,19 +26,6 @@ def janken(hand)
                 }
         return message
     end
-
-  if player == program
-    puts "あいこで"
-    return true
-
-  elsif(player == 0 && program==1)||(player==1 && program == 2)||(player==2 && program == 0)
-    puts "あなたの勝ちです"
-    return false
-
-  else
-    puts "あなたの負けです"
-    return false
-  end
 end
   
     
