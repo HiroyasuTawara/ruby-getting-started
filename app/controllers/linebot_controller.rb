@@ -14,7 +14,7 @@ require "line/bot"  # gem "line-bot-api"
 def janken(hand)
     bot_hand = ["グー", "チョキ","パー"].shuffle.first
     
-    if(hand == ~/グ/)
+    if(hand == "グー！")
     elsif bot_hand =="パー"
        message = {
                   type: "text",
@@ -24,7 +24,7 @@ def janken(hand)
     elsif bot_hand =="グー"
         message = {
             type: "text",
-            text: ["あいこはおれの勝ち！！"].shuffle.first
+            text: ["あいこはおれの勝ち！！"]
         }
         return message
     elsif bot_hand =="チョキ"
