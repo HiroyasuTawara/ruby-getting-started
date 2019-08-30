@@ -10,6 +10,41 @@ require "line/bot"  # gem "line-bot-api"
       }
     end
     
+    if event.message['text'] == "じゃんけん"
+        message = [
+            {
+             puts "じゃんけん・・・・"
+
+def janken
+puts "[0]グー\n[1]チョキ\n[2]パー"
+
+player=gets.to_i
+program=rand(3)
+
+jankens = ["グー!","チョキ!","パー!"]
+puts "あなたの手:#{jankens[player]},相手の手:#{jankens[program]}"
+
+if player == program
+  puts "あいこで"
+  return true
+
+elsif(player == 0 && program==1)||(player==1 && program == 2)||(player==2 && program == 0)
+  puts "あなたの勝ちです"
+  return false
+
+else
+  puts "あなたの負けです"
+  return false
+end
+end
+
+nextgame = true
+while nextgame 
+  nextgame = janken
+end   
+            }
+            ]
+    
     def callback
       body = request.body.read
   
