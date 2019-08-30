@@ -10,35 +10,36 @@ require "line/bot"  # gem "line-bot-api"
       }
     end
     
-    if event.message['text'] == "じゃんけん"
-        message = [
-            {
 
-def janken
+def janken(hand)
+    
+    if hand == "グー"
+       message = {
+                  type: "text",
+                  text: "ぱーおれの勝ち!"
+                }
+        return message
+    else
+        message = {
+                  type: "text",
+                  text: "君の負け!"
+                }
+        return message
+    end
 
-player=gets.to_i
-program=rand(3)
-jankens = ["グー！","チョキ！","パー！"]
-puts "あなたの手:#{jankens[player]},相手の手:#{jankens[program]}"
+  if player == program
+    puts "あいこで"
+    return true
 
-if player == program
-  puts "あいこで"
-  return true
+  elsif(player == 0 && program==1)||(player==1 && program == 2)||(player==2 && program == 0)
+    puts "あなたの勝ちです"
+    return false
 
-elsif(player == 0 && program==1)||(player==1 && program == 2)||(player==2 && program == 0)
-  puts "あなたの勝ちです"
-  return false
-
-else
-  puts "あなたの負けです"
-  return false
-end
-end
-
-nextgame = true
-while nextgame 
-  nextgame = janken
+  else
+    puts "あなたの負けです"
+    return false
   end
+end
   
     
     def callback
@@ -56,11 +57,16 @@ while nextgame
         when Line::Bot::Event::Message
           case event.type
           when Line::Bot::Event::MessageType::Text
-            message = {
-              type: "text",
-              text: event.message["text"] + "!"
-            }
-            client.reply_message(event["replyToken"], message)
+             if event.message['text'] == "じゃんけん"
+                message = janken(event.message['text'])
+                 client.reply_message(event["replyToken"], message)
+             else
+                message = {
+                  type: "text",
+                  text: "#{event.message['text']}!"
+                }
+                client.reply_message(event["replyToken"], message)
+              end
           when Line::Bot::Event::MessageType::Location
             message = {
               type: "location",
