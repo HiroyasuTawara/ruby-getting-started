@@ -57,7 +57,7 @@ end
         when Line::Bot::Event::Message
           case event.type
           when Line::Bot::Event::MessageType::Text
-             if event.message['text'] == "じゃんけん"
+             if event.message['text'] == "グー！" || event.message['text'] == "チョキ！" || event.message['text'] == "パー！"
                 message = janken(event.message['text'])
                  client.reply_message(event["replyToken"], message)
              else
