@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
      resources :widgets
-
-     get ':controller(/:action(/:id))'
-     root :to => 'say#hello'
    
      post '/callback' => 'linebot#callback'
-     
-     namespace :api do 
-     resources :visitors, only: [:index, :crate] 
-     end  # The priority is based upon order of creation: first created -> highest priority.
+       # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
