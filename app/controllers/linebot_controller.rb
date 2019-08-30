@@ -16,7 +16,7 @@ def janken(hand)
     if hand =~ /グ/
        message = {
                   type: "text",
-                  text: "パー！おれの勝ち!"
+                  text: ["パー！おれの勝ち!","パー！何で負けたか考えといて下さい"].shuffle.first
                 }
         return message
     elsif hand =~/パ/
@@ -28,7 +28,7 @@ def janken(hand)
     elsif hand =~/チョキ/
         message = {
             type: "text",
-            text: "グー！！おれの勝ち！"
+            text: "グー！おれの勝ち！"
         }
         return message
     
